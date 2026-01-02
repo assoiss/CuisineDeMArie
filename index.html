@@ -1,91 +1,382 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>السيرة الذاتية - أحمد موفق عبد الستار</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 0;
-      line-height: 1.8;
-      color: #222;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: white;
-      padding: 2em;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin-top: 2em;
-    }
-    h1, h2 {
-      color: #007b5e;
-    }
-    .photo {
-      text-align: center;
-      margin-bottom: 1em;
-    }
-    .photo img {
-      width: 160px;
-      border-radius: 8px;
-      border: 2px solid #ccc;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin-bottom: 1em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chez Marie - Ô Daloa | L'Expérience Culinaire Ivoirienne</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --orange-vif: #FF5733; /* Le orange éclatant de Marie */
+            --jaune-solaire: #FFD700; /* Le jaune pour les accents joyeux */
+            --blanc-creme: #FDF9F6; /* Un blanc doux, chaleureux */
+            --texte-sombre: #333333; /* Pour la lisibilité sur fond clair */
+            --texte-moyen: #666666; /* Pour les descriptions */
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--blanc-creme);
+            color: var(--texte-sombre);
+            line-height: 1.6;
+        }
+
+        /* Styles généraux pour le conteneur */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header (comme une carte de visite chic) */
+        header {
+            background-color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--orange-vif);
+            margin: 0;
+            line-height: 1;
+        }
+
+        .logo-main span {
+            display: block;
+            font-size: 0.9rem;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--texte-moyen);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            color: var(--texte-sombre);
+            font-weight: 600;
+        }
+        .contact-info a {
+            color: var(--orange-vif);
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        /* Hero Section (Photo à couper le souffle) */
+        .hero-section {
+            position: relative;
+            height: 500px; /* Grande taille pour un impact visuel */
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.9); /* Légèrement assombrie pour le texte */
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)); /* Gradient pour le texte */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero-overlay h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .hero-overlay p {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 10px;
+            color: var(--jaune-solaire);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .btn-discover {
+            background-color: var(--orange-vif);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .btn-discover:hover {
+            background-color: #E64A19;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Section Menu Par Catégorie */
+        .menu-category-section {
+            padding: 60px 0;
+            background-color: var(--blanc-creme);
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--orange-vif);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--jaune-solaire);
+            border-radius: 2px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .menu-item-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center; /* Centrer le contenu */
+        }
+
+        .menu-item-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .item-image {
+            width: 100%;
+            height: 220px; /* Taille fixe pour les images de plat */
+            object-fit: cover;
+        }
+
+        .item-details {
+            padding: 20px;
+        }
+
+        .item-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--orange-vif);
+            margin-bottom: 5px;
+        }
+
+        .item-tags {
+            font-size: 0.85rem;
+            color: var(--texte-moyen);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .item-tags span {
+            background-color: var(--jaune-solaire);
+            color: #7A5C00;
+            padding: 3px 8px;
+            border-radius: 5px;
+            margin: 0 3px;
+        }
+
+        .item-description {
+            font-size: 0.95rem;
+            color: var(--texte-moyen);
+            min-height: 60px; /* Pour aligner la hauteur */
+        }
+
+        .item-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--orange-vif);
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        /* Section About Marie (L'humain au centre) */
+        .about-marie-section {
+            background-color: #FFF8E1; /* Fond jaune très pâle */
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .about-marie-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-marie-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--orange-vif);
+            margin-bottom: 20px;
+        }
+
+        .about-marie-content p {
+            font-size: 1.1rem;
+            color: var(--texte-sombre);
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+
+        /* Footer (Ta signature IA Compagnie) */
+        footer {
+            background-color: var(--orange-vif);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+        .footer-logo span {
+            color: var(--jaune-solaire);
+        }
+        .footer-contact {
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="photo">
-      <img src="Ahmed.jpg" alt="Ahmed Mouafaq" />
-    </div>
-    <h1>أحمد موفق عبد الستار</h1>
-    <p><strong>تاريخ الميلاد:</strong> 1977 – بغداد</p>
-    <p><strong>الجنسية:</strong> عراقي من أبوين عراقيين</p>
 
-    <h2>المؤهلات الأكاديمية</h2>
-    <ul>
-      <li>بكالوريوس في الطب والجراحة البيطرية – جامعة بغداد، 2000-2001</li>
-      <li>خريج الكلية العسكرية – الدورة 2001-2002</li>
-    </ul>
+    <header>
+        <div class="header-content">
+            <h1 class="logo-main">Chez Marie<span>Ô DALOA</span></h1>
+            <div class="contact-info">
+                <a href="tel:0613537991">06 13 53 79 91</a>
+                
+            </div>
+        </div>
+    </header>
 
-    <h2>المسار المهني</h2>
-    <ul>
-      <li>نُقلت خدماتي من وزارة الدفاع إلى وزارة الزراعة بعد عام 2003، برتبة ملازم أول.</li>
-      <li>منذ 2003 أعمل في المجال البيطري، من مستوصف الدورة إلى مستوصف هور رجب.</li>
-    </ul>
+    <section class="hero-section">
+        <img src="1.png" alt="Plats Ivoiriens Chez Marie" class="hero-image">
+        <div class="hero-overlay">
+            <h2>L'Expérience Ô Daloa</h2>
+            <p>Le goût vrai de la Côte d'Ivoire au cœur de Paris</p>
+            <a href="#menu" class="btn-discover">Découvrir la Carte</a>
+        </div>
+    </section>
 
-    <h2>الدراسة الحالية</h2>
-    <p>طالب في كلية القانون.</p>
+    <section id="menu" class="menu-category-section">
+        <div class="container">
+            <h2 class="section-title">Nos Spécialités</h2>
 
-    <h2>الاهتمامات والنشاط السياسي</h2>
-    <p>منذ 2009، بدأت أتابع الشأن السياسي باحثاً عن حلول جذرية لإنقاذ العراق. منذ 2011 وحتى ثورة تشرين، نشطت في نشر مفاهيم الدولة المدنية والمشاركة في المظاهرات.</p>
+            <div class="menu-grid">
+                <div class="menu-item-card">
+                    <img src="1.png" alt="Garba Royal" class="item-image">
+                    <div class="item-details">
+                        <p class="item-name">Le Garba Royal</p>
+                        <p class="item-tags"><span>POISSON</span> <span>ATIÉKÉ</span> <span>TRADITION</span></p>
+                        <p class="item-description">Notre Attiéké de qualité supérieure, accompagné d'une darne de thon parfaitement frite, d'oignons croquants et d'un filet de piment maison.</p>
+                        <p class="item-price">12,50 €</p>
+                    </div>
+                </div>
 
-    <h2>الرؤية السياسية</h2>
-    <ul>
-      <li>بناء نواة شعبية وقيادة مدنية برؤية واضحة.</li>
-      <li>التأثير في المقاطعة الانتخابية عام 2014 و2018.</li>
-      <li>الإيمان بوحدة العراق من خلال العقيدة الوطنية الجامعة.</li>
-    </ul>
+                <div class="menu-item-card">
+                    <img src="1.png" alt="Poulet Braisé Daloa" class="item-image">
+                    <div class="item-details">
+                        <p class="item-name">Poulet Braisé de Daloa</p>
+                        <p class="item-tags"><span>VOLAILLE</span> <span>BRAISÉ</span> <span>ÉPICÉ</span></p>
+                        <p class="item-description">Un demi-poulet fermier mariné aux épices secrètes de Marie, braisé à la perfection. Servi avec riz ou alloco.</p>
+                        <p class="item-price">16,00 €</p>
+                    </div>
+                </div>
 
-    <h2>مشروعي السياسي الحالي</h2>
-    <ol>
-      <li><strong>المحور الوطني:</strong> سيادة العراق وسياسة خارجية متوازنة.</li>
-      <li><strong>المحور الاجتماعي:</strong> رواتب عادلة للموظفين، وضمان اجتماعي وفرص عمل لغير الموظفين.</li>
-      <li><strong>المحور الاقتصادي:</strong> تقليل الاعتماد على النفط، تنشيط التجارة والصناعة والسياحة، مكافحة الفساد.</li>
-      <li><strong>المحور المؤسسي:</strong> دعم مؤسسات الدولة، وتطوير النقابات المهنية.</li>
-    </ol>
+                <div class="menu-item-card">
+                    <img src="1.png" alt="Mafé Végétarien" class="item-image">
+                    <div class="item-details">
+                        <p class="item-name">Mafé Végétarien</p>
+                        <p class="item-tags"><span>VÉGÉTARIEN</span> <span>CACAHUÈTE</span> <span>DOUCEUR</span></p>
+                        <p class="item-description">Un ragoût onctueux à base de pâte d'arachide, de légumes de saison. Une explosion de saveurs végétales.</p>
+                        <p class="item-price">14,00 €</p>
+                    </div>
+                </div>
 
-    <h2>الترشح للانتخابات</h2>
-    <p>ترشحي جاء استجابةً لدعوة الأحرار. أعد بأن أكون صوتاً نزيهاً لجميع العراقيين، حاملاً لمشروع وطني حقيقي.</p>
-  </div>
+                <div class="menu-item-card">
+                    <img src="1.png" alt="Attiéké Poisson" class="item-image">
+                    <div class="item-details">
+                        <p class="item-name">Attiéké Poisson Braisé</p>
+                        <p class="item-tags"><span>POISSON</span> <span>FRAÎCHEUR</span> <span>LÉGER</span></p>
+                        <p class="item-description">Notre Attiéké accompagné d'un poisson braisé et sa sauce fraîche aux oignons et tomates.</p>
+                        <p class="item-price">15,00 €</p>
+                    </div>
+                </div>
+
+                <div class="menu-item-card">
+                    <img src="2.png" alt="Alloco Mix" class="item-image">
+                    <div class="item-details">
+                        <p class="item-name">Plateau Alloco Mix</p>
+                        <p class="item-tags"><span>ACCOMPAGNEMENT</span> <span>BANANE</span> <span>CROISETTE</span></p>
+                        <p class="item-description">Un assortiment généreux de bananes plantains frites, ignames et patates douces.</p>
+                        <p class="item-price">7,00 €</p>
+                    </div>
+                </div>
+            </div> </div> </section>
+
+    <section class="about-marie-section">
+        <div class="about-marie-content">
+            <h3>L'Histoire de Marie</h3>
+            <p>Depuis son plus jeune âge, Marie a appris les secrets de la cuisine ivoirienne auprès de sa grand-mère à Daloa. Chaque plat chez "Chez Marie" est une invitation à un voyage culinaire, préparé avec les ingrédients les plus frais et une passion inébranlable.</p>
+            <p>Venez découvrir l'authenticité et la générosité d'une cuisine qui réchauffe le cœur et éveille les papilles.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-logo">Propulsé par <span>IA COMPAGNIE</span></p>
+        <p class="footer-contact">Solutions Digitales pour une Gastronomie d'Excellence</p>
+        <p class="footer-contact">Contactez-nous pour transformer votre restaurant</p>
+    </footer>
+
 </body>
 </html>
